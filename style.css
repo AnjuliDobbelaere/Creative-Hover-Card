@@ -1,0 +1,144 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(120deg, rgb(217, 112, 129), pink, #ffff);
+}
+
+.card {
+  width: 350px;
+  height: 190px;
+  background: rgba(255, 255, 255, 0.542);
+  border-radius: 0.5rem;
+  transition: ease-in-out 500ms;
+  position: relative;
+  filter: drop-shadow(8px 10px 5px rgba(37, 25, 25, 0.332));
+  border-right: 1px solid rgba(0, 0, 0, 0.201);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.201);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 10px;
+  border: 5px 15px rgba(255, 255, 255, 0.308);
+}
+
+.card::after {
+  content: "";
+  width: 320px;
+  height: 160px;
+  background: rgba(255, 255, 255, 0.233);
+  border-radius: 0.5rem;
+  transition: 0.5sec;
+  position: absolute;
+  z-index: -2;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.card:hover {
+  height: 450px;
+}
+
+.card:hover:after {
+  content: "";
+  height: 420px;
+}
+
+.card .imgbox {
+  height: 180px;
+  width: 180px;
+  background: black;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: -40%;
+  border-radius: 0.5rem;
+  transition: 0.5s;
+}
+
+.card:hover .imgbox {
+  height: 250px;
+  width: 250px;
+  top: -30px;
+}
+
+.card .imgbox img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 0% 20%;
+  border-radius: 0.5rem;
+  filter: drop-shadow(2px 2px 5px rgba(37, 25, 25, 0.404));
+}
+
+.card .content {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  bottom: 5px;
+  z-index: -1;
+  overflow: hidden;
+  transition: 5sec;
+}
+
+.card:hover .content {
+  overflow: visible;
+  bottom: 150px;
+}
+
+.card .content .details {
+  width: 100%;
+  text-align: center;
+  transform: translateY(100px);
+}
+
+.card .content .details h2 {
+  font-size: 1.4rem;
+  font-family: "Pacifico", cursive;
+  font-weight: 600;
+  line-height: 1.4rem;
+}
+
+.card .content .details h2 span {
+  font-size: 1rem;
+  font-family: "Poppins", sans-serif;
+  font-style: oblique;
+  font-weight: 400;
+}
+
+.card .stats {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 2rem;
+  margin-bottom: -15px;
+  font-family: "Poppins", sans-serif;
+  font-size: 0.7rem;
+  color: rgb(64, 62, 62);
+}
+
+.card .btns {
+  margin-top: 2.5rem;
+  margin-bottom: -1rem;
+  display: flex;
+  justify-content: space-around;
+}
+
+.card .btns button {
+  background-color: rgb(195, 81, 100);
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+}
